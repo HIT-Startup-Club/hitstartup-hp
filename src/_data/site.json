@@ -1,0 +1,14 @@
+{
+  "stats": [
+    { "value": "12", "label": "Incubated Startups", "labelJp": "起業プロジェクト数", "gradient": "from-primary to-purple-600" },
+    { "value": "50+", "label": "Members", "labelJp": "現役部員数", "gradient": "from-cyan-accent to-blue-600" },
+    { "value": "8", "label": "Partner Companies", "labelJp": "連携企業数", "gradient": "from-pink-500 to-orange-400" },
+    { "value": "6", "label": "Departments", "labelJp": "所属学部学科数", "gradient": "from-emerald-500 to-teal-400" }
+  ],
+  "timeline": [
+    { "date": "April 2021", "title": "Club Founded", "description": "有志の学生3名により、広島工業大学公認サークルとして設立。Nexus21にて活動を開始。", "color": "primary", "side": "left" },
+    { "date": "December 2022", "title": "First Startup Launch", "description": "所属チームが初の法人登記。大学発ベンチャーとして学内インキュベーション施設に入居。", "color": "cyan-accent", "side": "right" },
+    { "date": "August 2023", "title": "Won National Contest", "description": "全国学生ビジネスコンテストにて最優秀賞を受賞。活動が全国メディアに取り上げられる。", "color": "primary", "side": "left" },
+    { "date": "April 2024", "title": "Partnership Expansion", "description": "地元企業5社とスポンサー契約を締結。産学連携プロジェクト「HIT-X」始動。", "color": "purple-500", "side": "right" }
+  ]
+}
