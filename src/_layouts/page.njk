@@ -10,5 +10,9 @@ isPortfolio: false
 setTimeout(function() {
     document.querySelector('.hero-matrix').classList.add('is-animated');
 }, 1000);
+
+// Badge expand — clip-path transition triggered by adding class
+var b = document.querySelector('.hero-badge');
+if (b) setTimeout(function() { b.classList.add('is-expanded'); }, 200);
 </script>
 {% endif %}
