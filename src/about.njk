@@ -63,33 +63,26 @@ permalink: "about.html"
 <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 flex flex-col md:flex-row items-center gap-10 md:gap-16">
 <div class="w-full md:w-1/3 flex flex-col items-center">
 <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-lg mb-6">
-<img alt="Club President Tanaka Kenta" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnUbdp15mU5Y0IzzPZqYfVz9ydutAI0ilZdW1ohsi--Pt8Dmn_C8ltXcEJq3podx3epAN5GN0o5_zM4PorLI0OuzOTrj5vbtqgXl6Gn7cR-LJKZiv1oi9ICvf8JpUQxijElHdZ8xEf3wmFu0Ve7V44XHuI9XhNOAZkcBB6iuzK8kxK4ZkgTj4IvJ_py8UjKj1fUIRBLLC0wzuvP4ZAG7rt3aTvjvdKnCoCDrSDBZ7RrUmlkYOrcfAJzVZ-bw5II66x-Y7JwQalvRM"/>
+<img alt="{{ site.president.role }} {{ site.president.nameEn }}" class="w-full h-full object-cover" src="{{ site.president.photo }}"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 </div>
 <div class="text-center">
-<h3 class="text-xl font-bold font-jp">田中 健太</h3>
-<p class="text-primary text-sm font-bold tracking-wide uppercase mt-1">Club President</p>
+<h3 class="text-xl font-bold font-jp">{{ site.president.name }}</h3>
+<p class="text-primary text-sm font-bold tracking-wide uppercase mt-1">{{ site.president.role }}</p>
 </div>
 </div>
 <div class="w-full md:w-2/3">
 <span class="material-symbols-outlined text-6xl text-gray-200 mb-4 select-none">format_quote</span>
 <h3 class="text-2xl md:text-3xl font-bold font-jp mb-6 leading-snug">
-                            広島から世界を変える。<br/>
-                            その第一歩を、ここから。
+                            {{ site.president.headline | safe }}
                         </h3>
 <div class="space-y-4 text-text-sub font-jp leading-relaxed">
-<p>
-                                「学生だから」という言葉は、私たちの辞書にはありません。むしろ、学生だからこそ、常識にとらわれない発想で、純粋な情熱で、社会課題に立ち向かうことができると信じています。
-                            </p>
-<p>
-                                HIT Startup Clubは、単なる同好会ではなく、本気で事業化を目指す「スタートアップ・スタジオ」です。技術を学ぶだけでなく、それをどう社会実装するか。失敗をどう糧にするか。
-                            </p>
-<p>
-                                私たちと一緒に、未踏の領域へ踏み出しましょう。あなたの挑戦を待っています。
-                            </p>
+{% for msg in site.president.messages %}
+<p>{{ msg }}</p>
+{% endfor %}
 </div>
 <div class="mt-8 pt-6 border-t border-gray-100 flex justify-end">
-<div class="font-en text-xl italic text-gray-400 font-serif">Kenta Tanaka</div>
+<div class="font-en text-xl italic text-gray-400 font-serif">{{ site.president.nameEn }}</div>
 </div>
 </div>
 </div>
