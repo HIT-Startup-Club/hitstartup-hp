@@ -2,7 +2,7 @@
 <html class="light" lang="ja"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HIT Entrepreneurship Club</title>
+<title>HIT Startup Club</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;family=Noto+Sans+JP:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
@@ -36,7 +36,7 @@
                         "full": "9999px"
                     },
                     backgroundImage: {
-                        'gradient-mesh': 'radial-gradient(at 40% 20%, hsla(312,100%,50%,0.1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,0.1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(340,100%,76%,0.1) 0px, transparent 50%)',
+                        'gradient-mesh': 'radial-gradient(at 40% 20%, hsla(312,100%,50%,0.4) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,0.35) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(340,100%,76%,0.35) 0px, transparent 50%)',
                     }
                 },
             },
@@ -74,6 +74,67 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
         }
+        @keyframes gradient-float {
+            0% { background-size: 100% 100%; background-position: 0% 0%; }
+            25% { background-size: 130% 130%; background-position: 60% 20%; }
+            50% { background-size: 110% 110%; background-position: 30% 70%; }
+            75% { background-size: 120% 120%; background-position: 70% 50%; }
+            100% { background-size: 100% 100%; background-position: 0% 0%; }
+        }
+        @keyframes blob-drift {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+            33% { transform: translate(-45%, -55%) scale(1.2); opacity: 0.25; }
+            66% { transform: translate(-55%, -45%) scale(0.95); opacity: 0.18; }
+        }
+        .animate-gradient-mesh {
+            animation: gradient-float 20s ease-in-out infinite;
+        }
+        .animate-blob-drift {
+            animation: blob-drift 15s ease-in-out infinite;
+        }
+        @keyframes dot-appear {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes badge-expand {
+            0% { max-width: 1.5rem; overflow: hidden; opacity: 0; }
+            10% { opacity: 1; }
+            100% { max-width: 30rem; overflow: hidden; opacity: 1; }
+        }
+        @keyframes badge-text-reveal {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(16px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-dot-appear {
+            animation: dot-appear 0.4s ease-out 0.3s both;
+        }
+        .animate-badge-expand {
+            animation: badge-expand 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+        }
+        .animate-badge-text {
+            animation: badge-text-reveal 0.5s ease-out 0.7s both;
+        }
+        .animate-fade-in-up-1 {
+            animation: fade-in-up 0.8s ease-out 1.0s both;
+        }
+        .animate-fade-in-up-2 {
+            animation: fade-in-up 0.8s ease-out 1.3s both;
+        }
+        @keyframes text-gradient-slide {
+            0% { background-position: 200% center; }
+            100% { background-position: 0% center; }
+        }
+        .animate-text-gradient {
+            background-image: linear-gradient(to right, #ff00cc, #a855f7, #06b6d4, #a855f7, #ff00cc, #a855f7, #06b6d4);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: text-gradient-slide 3s cubic-bezier(0.08, 0.82, 0.17, 1) forwards;
+        }
     </style>
 </head>
 <body class="bg-background-light text-text-main overflow-x-hidden antialiased selection:bg-primary/30 selection:text-primary">
@@ -81,15 +142,13 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-16">
 <a href="index.html" class="flex items-center gap-3 cursor-pointer">
-<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-white">
-<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
-</div>
-<span class="font-bold text-lg tracking-tight">HIT Entrepreneurship Club</span>
+<img src="assets/images/logo.png" alt="HIT Startup Club" class="w-8 h-8 object-contain">
+<span class="font-bold text-lg tracking-tight">広島工業大学 起業部</span>
 </a>
 <div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-bold text-primary transition-colors" href="index.html">Home</a>
 <a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="about.html">About</a>
 <a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="members.html">Members</a>
-<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="#contact">Activities</a>
 <a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="contact.html">Contact</a>
 <a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm" style="text-decoration:none;">
                         Join Us
@@ -105,29 +164,26 @@
 </nav>
 <main class="flex flex-col w-full pt-16">
 <section class="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden bg-background-light">
-<div class="absolute inset-0 w-full h-full bg-gradient-mesh z-0 pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
+<div class="absolute inset-0 w-full h-full bg-gradient-mesh z-0 pointer-events-none animate-gradient-mesh"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[100px] pointer-events-none z-0 animate-blob-drift"></div>
 <div class="relative z-10 max-w-5xl mx-auto px-4 text-center flex flex-col items-center gap-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-medium text-gray-600 mb-2">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    Now Recruiting New Members for 2024
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-medium text-gray-600 mb-2 animate-badge-expand">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse animate-dot-appear"></span>
+<span class="animate-badge-text whitespace-nowrap">Now Recruiting New Members for 2026</span>
                 </div>
 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.1] text-text-main">
                     We Build <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-accent">The Future</span>
+<span class="text-transparent animate-text-gradient">The Future</span>
 </h1>
-<p class="text-lg md:text-xl text-text-sub max-w-2xl font-jp">
+<p class="text-lg md:text-xl text-text-sub max-w-2xl font-jp animate-fade-in-up-1">
                     広島工業大学起業部 - 学生から、世界を変えるイノベーションを。<br class="hidden md:block"/>
                     テクノロジーと情熱で、未踏の領域へ。
                 </p>
-<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center animate-fade-in-up-2">
 <a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="btn-gradient h-12 px-8 rounded-full text-white font-bold text-base flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all" style="text-decoration:none;">
 <span>Join Us (参加する)</span>
 <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
-<button class="h-12 px-8 rounded-full bg-white border border-gray-200 text-text-main font-bold text-base hover:bg-gray-50 transition-colors flex items-center justify-center">
-                        View Activities
-                    </button>
 </div>
 </div>
 </section>
