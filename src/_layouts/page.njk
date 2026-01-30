@@ -1,0 +1,14 @@
+---
+layout: base.njk
+pathPrefix: ""
+isPortfolio: false
+---
+{{ content | safe }}
+{% include "footer-main.njk" %}
+{% if isHomepage %}
+<script>
+setTimeout(function() {
+    document.querySelector('.hero-matrix').classList.add('is-animated');
+}, 1000);
+</script>
+{% endif %}

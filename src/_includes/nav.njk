@@ -1,0 +1,33 @@
+<nav class="fixed top-0 left-0 right-0 z-50 w-full glass-nav transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<a href="{{ pathPrefix }}index.html" class="flex items-center gap-3 cursor-pointer">
+<img src="{{ pathPrefix }}assets/images/logo.png" alt="HIT Startup Club" class="w-8 h-8 object-contain">
+<span class="font-bold text-lg tracking-tight">広島工業大学 起業部</span>
+</a>
+<div class="hidden md:flex items-center space-x-8">
+{% if isPortfolio %}
+<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="{{ pathPrefix }}about.html">About</a>
+<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="#works">Works</a>
+<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="#">Vision</a>
+<a href="{{ pathPrefix }}index.html" class="btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm">
+                    Join Us
+                </a>
+{% else %}
+<a class="text-sm {{ 'font-bold text-primary' if activePage == 'home' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}index.html">Home</a>
+<a class="text-sm {{ 'font-bold text-primary' if activePage == 'about' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}about.html">About</a>
+<a class="text-sm {{ 'font-bold text-primary' if activePage == 'members' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}members.html">Members</a>
+<a class="text-sm {{ 'font-bold text-primary' if activePage == 'contact' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}contact.html">Contact</a>
+<a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm" style="text-decoration:none;">
+                        Join Us
+                    </a>
+{% endif %}
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-text-main hover:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>

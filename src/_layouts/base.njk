@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+{% include "head.njk" %}
+{% include "tailwind-config.njk" %}
+{% include "styles-base.njk" %}
+</head>
+<body class="bg-background-light text-text-main overflow-x-hidden antialiased selection:bg-primary/30 selection:text-primary">
+{% include "nav.njk" %}
+{{ content | safe }}
+</body>
+</html>
