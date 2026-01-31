@@ -1,0 +1,95 @@
+# ============================================================
+#  HIT Startup Club ホームページ  サイト全体の設定ファイル
+# ============================================================
+#
+#  編集ルール:
+#    - 「#」で始まる行はコメント（説明用。サイトには表示されません）
+#    - 値を変更するときは「:」の後のスペースを消さないでください
+#    - 日本語や記号を含む文は "" で囲んでください
+#    - <br/> は改行を意味します（そのまま残してください）
+#    - ⚠️ マークがある行は変更しないでください（デザイン設定です）
+#
+# ============================================================
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#  部長あいさつ（Aboutページに表示されます）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+president:
+  name: "田中 健太"                # 部長の名前（日本語）
+  nameEn: "Kenta Tanaka"          # 部長の名前（ローマ字）
+  role: "Club President"           # 役職（英語で記入）
+  photo: "https://lh3.googleusercontent.com/aida-public/AB6AXuDnUbdp15mU5Y0IzzPZqYfVz9ydutAI0ilZdW1ohsi--Pt8Dmn_C8ltXcEJq3podx3epAN5GN0o5_zM4PorLI0OuzOTrj5vbtqgXl6Gn7cR-LJKZiv1oi9ICvf8JpUQxijElHdZ8xEf3wmFu0Ve7V44XHuI9XhNOAZkcBB6iuzK8kxK4ZkgTj4IvJ_py8UjKj1fUIRBLLC0wzuvP4ZAG7rt3aTvjvdKnCoCDrSDBZ7RrUmlkYOrcfAJzVZ-bw5II66x-Y7JwQalvRM"
+  # ↑ プロフィール写真のURL（Google Photosなどの外部URL）
+
+  headline: "広島から世界を変える。<br/>その第一歩を、ここから。"
+  # ↑ 見出しテキスト（<br/>で改行できます）
+
+  # あいさつ文（段落ごとに「- 」で区切ってください）
+  messages:
+    - "「学生だから」という言葉は、私たちの辞書にはありません。むしろ、学生だからこそ、常識にとらわれない発想で、純粋な情熱で、社会課題に立ち向かうことができると信じています。"
+    - "HIT Startup Clubは、単なる同好会ではなく、本気で事業化を目指す「スタートアップ・スタジオ」です。技術を学ぶだけでなく、それをどう社会実装するか。失敗をどう糧にするか。"
+    - "私たちと一緒に、未踏の領域へ踏み出しましょう。あなたの挑戦を待っています。"
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#  実績の数字（Aboutページに表示される4つのカード）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#  value と labelJp を変更してください。
+#  label（英語）も必要に応じて変更できます。
+#  gradient は色の設定です。⚠️ 変更しないでください。
+#
+stats:
+  - value: "12"                                      # 表示する数字
+    label: "Incubated Startups"                      # 英語の説明
+    labelJp: "起業プロジェクト数"                      # 日本語の説明
+    gradient: "from-primary to-purple-600"            # ⚠️ 変更しない（色の設定）
+
+  - value: "50+"
+    label: "Members"
+    labelJp: "現役部員数"
+    gradient: "from-cyan-accent to-blue-600"          # ⚠️ 変更しない
+
+  - value: "8"
+    label: "Partner Companies"
+    labelJp: "連携企業数"
+    gradient: "from-pink-500 to-orange-400"           # ⚠️ 変更しない
+
+  - value: "6"
+    label: "Departments"
+    labelJp: "所属学部学科数"
+    gradient: "from-emerald-500 to-teal-400"          # ⚠️ 変更しない
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#  沿革タイムライン（Aboutページに表示されます）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#  date, title, description を変更してください。
+#  新しい出来事を追加する場合は、一番下にコピーして追加してください。
+#  color と side は見た目の設定です。⚠️ 変更しないでください。
+#  （side は "left" と "right" を交互に設定しています）
+#
+timeline:
+  - date: "April 2021"                # 日付（英語で「月 年」形式）
+    title: "Club Founded"             # 見出し（英語）
+    description: "有志の学生3名により、広島工業大学公認サークルとして設立。Nexus21にて活動を開始。"
+    color: "primary"                  # ⚠️ 変更しない
+    side: "left"                      # ⚠️ 変更しない
+
+  - date: "December 2022"
+    title: "First Startup Launch"
+    description: "所属チームが初の法人登記。大学発ベンチャーとして学内インキュベーション施設に入居。"
+    color: "cyan-accent"              # ⚠️ 変更しない
+    side: "right"                     # ⚠️ 変更しない
+
+  - date: "August 2023"
+    title: "Won National Contest"
+    description: "全国学生ビジネスコンテストにて最優秀賞を受賞。活動が全国メディアに取り上げられる。"
+    color: "primary"                  # ⚠️ 変更しない
+    side: "left"                      # ⚠️ 変更しない
+
+  - date: "April 2024"
+    title: "Partnership Expansion"
+    description: "地元企業5社とスポンサー契約を締結。産学連携プロジェクト「HIT-X」始動。"
+    color: "purple-500"               # ⚠️ 変更しない
+    side: "right"                     # ⚠️ 変更しない

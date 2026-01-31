@@ -17,6 +17,7 @@
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'home' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}index.html">Home</a>
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'about' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}about.html">About</a>
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'members' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}members.html">Members</a>
+<a class="text-sm {{ 'font-bold text-primary' if activePage == 'activity' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}activities.html">Activity</a>
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'contact' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}contact.html">Contact</a>
 <a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm" style="text-decoration:none;">
                         Join Us
@@ -24,10 +25,107 @@
 {% endif %}
 </div>
 <div class="md:hidden flex items-center">
-<button class="text-text-main hover:text-primary">
-<span class="material-symbols-outlined">menu</span>
+<button id="mobile-menu-btn" class="hamburger" aria-label="メニューを開く">
+<span></span>
+<span></span>
+<span></span>
 </button>
 </div>
 </div>
 </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-lg overflow-hidden transition-all duration-300 ease-in-out" style="max-height:0;opacity:0;">
+<div class="px-4 py-4 space-y-3">
+{% if isPortfolio %}
+<a class="block text-sm font-medium text-text-sub hover:text-primary transition-colors py-2" href="{{ pathPrefix }}about.html">About</a>
+<a class="block text-sm font-medium text-text-sub hover:text-primary transition-colors py-2" href="#works">Works</a>
+<a class="block text-sm font-medium text-text-sub hover:text-primary transition-colors py-2" href="#">Vision</a>
+<a href="{{ pathPrefix }}index.html" class="block btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm text-center mt-2" style="text-decoration:none;">Join Us</a>
+{% else %}
+<a class="block text-sm {{ 'font-bold text-primary' if activePage == 'home' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}index.html">Home</a>
+<a class="block text-sm {{ 'font-bold text-primary' if activePage == 'about' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}about.html">About</a>
+<a class="block text-sm {{ 'font-bold text-primary' if activePage == 'members' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}members.html">Members</a>
+<a class="block text-sm {{ 'font-bold text-primary' if activePage == 'activity' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}activities.html">Activity</a>
+<a class="block text-sm {{ 'font-bold text-primary' if activePage == 'contact' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}contact.html">Contact</a>
+<a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="block btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm text-center mt-2" style="text-decoration:none;">Join Us</a>
+{% endif %}
+</div>
+</div>
 </nav>
+<style>
+.hamburger {
+  width: 20px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-text-main, #1a1a2e);
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 6px; }
+.hamburger span:nth-child(3) { top: 12px; }
+.hamburger.active span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
+}
+</style>
+<script>
+(function() {
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const links = menu.querySelectorAll('a');
+  let isOpen = false;
+
+  function openMenu() {
+    isOpen = true;
+    btn.classList.add('active');
+    menu.style.maxHeight = menu.scrollHeight + 'px';
+    menu.style.opacity = '1';
+    btn.setAttribute('aria-label', 'メニューを閉じる');
+    links.forEach(function(link, i) {
+      link.style.opacity = '0';
+      link.style.transform = 'translateY(-10px)';
+      link.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      setTimeout(function() {
+        link.style.opacity = '1';
+        link.style.transform = 'translateY(0)';
+      }, 50 * (i + 1));
+    });
+  }
+
+  function closeMenu() {
+    isOpen = false;
+    btn.classList.remove('active');
+    menu.style.maxHeight = '0';
+    menu.style.opacity = '0';
+    btn.setAttribute('aria-label', 'メニューを開く');
+  }
+
+  btn.addEventListener('click', function() {
+    isOpen ? closeMenu() : openMenu();
+  });
+  links.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+</script>
