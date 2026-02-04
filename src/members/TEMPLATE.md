@@ -77,7 +77,7 @@ heroDescription: |
 summary: "学部・学年。一言紹介文。50文字程度。"
 
 # タグ（趣味やキーワード。カードに表示）
-tags:
+memberTags:
   - "#タグ1"
   - "#タグ2"
   - "#タグ3"
@@ -117,20 +117,6 @@ projects:
     imagePosition: "object-top"
     role: "担当した役割"
     impact: "成果・インパクト"
-
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#  ビジョン・ステータス（メンバー詳細ページ下部）
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# ステータスの例:
-#   "Looking for Internships"  … インターン探し中
-#   "Open to Projects"         … プロジェクト参加希望
-#   "Available for Collaboration" … コラボ歓迎
-status: "Looking for Internships"
-visionHeadline: "ビジョンの見出し"
-visionDescription: |
-  ビジョンの本文。将来の目標や、
-  現在取り組んでいることなどを記述してください。
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

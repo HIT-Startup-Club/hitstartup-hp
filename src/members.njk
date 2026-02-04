@@ -23,19 +23,19 @@ permalink: "members.html"
 <section class="sticky top-16 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100 py-4 mb-8">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 overflow-x-auto no-scrollbar pb-1">
-<button class="px-5 py-2 rounded-full bg-text-main text-white text-sm font-bold shadow-md transition-transform hover:scale-105 whitespace-nowrap">
+<button class="member-filter-btn px-5 py-2 rounded-full text-sm font-bold shadow-md transition-transform hover:scale-105 whitespace-nowrap bg-text-main text-white" data-filter="all">
                     All Members
                 </button>
-<button class="px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap">
+<button class="member-filter-btn px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap" data-filter="Business">
                     Business
                 </button>
-<button class="px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap">
+<button class="member-filter-btn px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap" data-filter="Technology">
                     Technology
                 </button>
-<button class="px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap">
+<button class="member-filter-btn px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap" data-filter="Design">
                     Design
                 </button>
-<button class="px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap">
+<button class="member-filter-btn px-5 py-2 rounded-full bg-white border border-gray-200 text-text-sub hover:text-primary hover:border-primary text-sm font-medium transition-all hover:shadow-sm whitespace-nowrap" data-filter="Marketing">
                     Marketing
                 </button>
 </div>
@@ -44,7 +44,7 @@ permalink: "members.html"
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
 {% for member in collections.members %}
-<a href="members/{{ member.data.slug }}.html" class="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center h-full" style="text-decoration:none;color:inherit;" data-category="{{ member.data.category }}">
+<a href="members/{{ member.data.slug }}.html" class="member-card group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center h-full" style="text-decoration:none;color:inherit;" data-category="{{ member.data.category }}">
 <div class="relative w-28 h-28 mb-5">
 <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-cyan-accent opacity-20 blur-sm group-hover:opacity-40 transition-opacity"></div>
 <div class="relative w-full h-full rounded-full overflow-hidden border-[3px] border-white shadow-inner">
@@ -57,7 +57,7 @@ permalink: "members.html"
                     {{ member.data.summary }}
                 </p>
 <div class="flex flex-wrap justify-center gap-x-3 mb-5 font-jp">
-{% for tag in member.data.tags %}<span class="text-xs text-gray-400">{{ tag }}</span>
+{% for tag in member.data.memberTags %}<span class="text-xs text-gray-400">{{ tag }}</span>
 {% endfor %}</div>
 <div class="mt-auto flex flex-wrap justify-center gap-2">
 {% for badge in member.data.skillBadges %}<span class="px-2.5 py-1 bg-gray-50 border border-gray-100 text-gray-600 text-[10px] uppercase font-bold tracking-wide rounded-md">{{ badge }}</span>
@@ -90,3 +90,30 @@ permalink: "members.html"
 </div>
 </section>
 </main>
+<script>
+(function() {
+  var btns = document.querySelectorAll('.member-filter-btn');
+  var cards = document.querySelectorAll('.member-card');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.getAttribute('data-filter');
+      btns.forEach(function(b) {
+        b.className = b.className
+          .replace('bg-text-main text-white font-bold shadow-md', '')
+          .replace('bg-white border border-gray-200 text-text-sub', '')
+          .trim();
+        b.classList.add('bg-white', 'border', 'border-gray-200', 'text-text-sub');
+      });
+      btn.classList.remove('bg-white', 'border', 'border-gray-200', 'text-text-sub');
+      btn.classList.add('bg-text-main', 'text-white', 'font-bold', 'shadow-md');
+      cards.forEach(function(card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>

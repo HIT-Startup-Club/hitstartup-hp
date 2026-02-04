@@ -3,7 +3,7 @@ module.exports = {
   tags: ["member"],
   eleventyComputed: {
     permalink: data => data.eleventyExcludeFromCollections ? false : `members/${data.slug}.html`,
-    title: data => data.eleventyExcludeFromCollections ? "" : `${data.name} | HIT Startup Club`,
+    title: data => data.eleventyExcludeFromCollections ? "" : data.name,
     copyrightName: data => data.eleventyExcludeFromCollections ? "" : data.nameEn
   }
 };

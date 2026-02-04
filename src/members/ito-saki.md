@@ -16,7 +16,7 @@ heroDescription: |
   Next.jsとTailwind CSSを用いたモダンなWebサイト構築が得意。
   「使いやすさ」と「美しさ」の両立を追求するフロントエンド開発者です。
 summary: "情報科学部2年。Next.jsとTailwind CSSを用いたモダンなWebサイト構築が得意。"
-tags:
+memberTags:
   - "#デザイン実装"
   - "#OSS"
   - "#自作キーボード"
