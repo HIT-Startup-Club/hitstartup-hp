@@ -41,7 +41,7 @@
 
   (3) src/members/○○○.md  （例: tanaka-kenta.md）
       → 各メンバーの個人情報
-      → Membersページとポートフォリオページに表示されます
+      → Membersページとメンバー詳細ページに表示されます
 
   (4) src/activities/○○○.md  （例: 2025-04-01-event-name.md）
       → 活動報告・ニュース記事
