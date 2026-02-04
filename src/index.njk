@@ -89,7 +89,7 @@ permalink: "index.html"
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 {% for member in collections.featuredMembers %}
-<a href="portfolio/{{ member.data.slug }}.html" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-4 card-hover" style="text-decoration:none;color:inherit;">
+<a href="members/{{ member.data.slug }}.html" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-4 card-hover" style="text-decoration:none;color:inherit;">
 <div class="flex items-center gap-4">
 <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
 <img alt="{{ member.data.photoAlt }}" class="w-full h-full object-cover" src="{{ member.data.photo }}"/>
