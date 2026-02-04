@@ -67,6 +67,7 @@ layout: portfolio.njk
 <span class="material-symbols-outlined text-primary">folder_open</span>
                 Selected Works
             </h2>
+{% if projects and projects.length %}
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 {% for project in projects %}
 <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
@@ -93,6 +94,11 @@ layout: portfolio.njk
 </div>
 {% endfor %}
 </div>
+{% else %}
+<div class="text-center py-12">
+<p class="text-2xl text-text-sub font-jp">頑張って実績作り中...((((((((((っ･ω･)っ</p>
+</div>
+{% endif %}
 </div>
 </section>
 <section class="py-24 relative overflow-hidden bg-white">

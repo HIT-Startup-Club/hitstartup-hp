@@ -6,14 +6,6 @@
 <span class="font-bold text-lg tracking-tight">広島工業大学 起業部</span>
 </a>
 <div class="hidden md:flex items-center space-x-8">
-{% if isPortfolio %}
-<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="{{ pathPrefix }}about.html">About</a>
-<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="#works">Works</a>
-<a class="text-sm font-medium text-text-sub hover:text-primary transition-colors" href="#">Vision</a>
-<a href="{{ pathPrefix }}index.html" class="btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm">
-                    Join Us
-                </a>
-{% else %}
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'home' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}index.html">Home</a>
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'about' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}about.html">About</a>
 <a class="text-sm {{ 'font-bold text-primary' if activePage == 'members' else 'font-medium text-text-sub hover:text-primary' }} transition-colors" href="{{ pathPrefix }}members.html">Members</a>
@@ -22,7 +14,6 @@
 <a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm" style="text-decoration:none;">
                         Join Us
                     </a>
-{% endif %}
 </div>
 <div class="md:hidden flex items-center">
 <button id="mobile-menu-btn" class="hamburger" aria-label="メニューを開く">
@@ -36,19 +27,12 @@
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-lg overflow-hidden transition-all duration-300 ease-in-out" style="max-height:0;opacity:0;">
 <div class="px-4 py-4 space-y-3">
-{% if isPortfolio %}
-<a class="block text-sm font-medium text-text-sub hover:text-primary transition-colors py-2" href="{{ pathPrefix }}about.html">About</a>
-<a class="block text-sm font-medium text-text-sub hover:text-primary transition-colors py-2" href="#works">Works</a>
-<a class="block text-sm font-medium text-text-sub hover:text-primary transition-colors py-2" href="#">Vision</a>
-<a href="{{ pathPrefix }}index.html" class="block btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm text-center mt-2" style="text-decoration:none;">Join Us</a>
-{% else %}
 <a class="block text-sm {{ 'font-bold text-primary' if activePage == 'home' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}index.html">Home</a>
 <a class="block text-sm {{ 'font-bold text-primary' if activePage == 'about' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}about.html">About</a>
 <a class="block text-sm {{ 'font-bold text-primary' if activePage == 'members' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}members.html">Members</a>
 <a class="block text-sm {{ 'font-bold text-primary' if activePage == 'activity' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}activities.html">Activity</a>
 <a class="block text-sm {{ 'font-bold text-primary' if activePage == 'contact' else 'font-medium text-text-sub hover:text-primary' }} transition-colors py-2" href="{{ pathPrefix }}contact.html">Contact</a>
 <a href="https://line.me/ti/g2/I4hPOfn28NLrMfHr6Uln_BRtiXHN4ewwg5sbPw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener noreferrer" class="block btn-gradient text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm text-center mt-2" style="text-decoration:none;">Join Us</a>
-{% endif %}
 </div>
 </div>
 </nav>
